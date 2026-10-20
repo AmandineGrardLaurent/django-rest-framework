@@ -14,6 +14,7 @@ class ProductSerializer(ModelSerializer):
         model = Product
         fields = ['id', 'name', 'date_created', 'date_updated', 'category']
 
+
 class ArticleSerializer(ModelSerializer):
     class Meta:
         model = Article
