@@ -17,3 +17,5 @@ types-requests==2.33.0.20261006
 typing_extensions==4.16.0
 tzdata==2026.5
 urllib3==2.8.0
+requests==2.26.0
+djangorestframework_simplejwt==4.7.2

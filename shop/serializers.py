@@ -11,19 +11,20 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     def validate_price(self, value):
         if value < 1:
-            raise serializers.ValidationError('Price must be > 1')
+            raise serializers.ValidationError('Price must be greater than 1')
         return value
 
     def validate_product(self, value):
         if value.active is False:
-            raise serializers.ValidationError('Product must be active')
+            raise serializers.ValidationError('Inactive product')
         return value
+
 
 class ProductListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'date_created', 'date_updated', 'name', 'category']
+        fields = ['id', 'date_created', 'date_updated', 'name', 'category', 'ecoscore']
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
